@@ -2,7 +2,7 @@
 const jwt = require('jsonwebtoken');
 
 // schema is imported to check the status of the user
-const User = require('../models/User');
+const User = require('../Models/User');
 
 exports.authToken = (req, res, next) => {
     // console.log(req.cookie)

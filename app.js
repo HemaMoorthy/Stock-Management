@@ -19,6 +19,9 @@ app.use(express.urlencoded({
 const AuthRouter = require('./Routes/AuthRouter');
 app.use('/accounts',AuthRouter);
 
+const StockRouter = require('./Routes/StockRouter');
+app.use('/stocks',StockRouter);
+
 app.listen(process.env.PORT, ()=>{
     console.log("Server Started at port 5500");
 })
