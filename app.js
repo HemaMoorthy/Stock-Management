@@ -25,6 +25,10 @@ app.use('/stocks',StockRouter);
 const CategoryRouter = require('./Routes/CategoryRouter');
 app.use('/category',CategoryRouter);
 
+const BrandRouter = require('./Routes/BrandRouter');
+app.use('/brand',BrandRouter);
+
+
 app.listen(process.env.PORT, ()=>{
     console.log("Server Started at port 5500");
 })
