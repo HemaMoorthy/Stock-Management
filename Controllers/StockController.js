@@ -17,3 +17,30 @@ exports.addstock = async(req,res)=>{
         })
     }
 }
+
+module.exports.getAllStocks=async(req, res)=>{
+    try {
+        console.log("*********")
+        stock.find().then((stk) => {
+            if(!stk){
+                res.status(404).json({
+                    status:'Error',
+                    message:'No stocks',
+                    err:error.message
+                })
+            } else {
+                res.status(200).json({
+                    status:'Success',
+                    message:'Get all stocks'
+                })
+            }
+        })
+        
+    } catch (error) {
+        res.status(500).json({
+            status:'Error',
+            message:'Something Went Wrong',
+            err:error.message
+        })
+    }
+}
