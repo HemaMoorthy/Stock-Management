@@ -20,7 +20,6 @@ exports.addstock = async(req,res)=>{
 
 module.exports.getAllStocks=async(req, res)=>{
     try {
-        console.log("*********")
         stock.find().then((stk) => {
             if(!stk){
                 res.status(404).json({
