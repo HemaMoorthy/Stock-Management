@@ -7,5 +7,5 @@ const AuthToken = require('../MiddleWares/AuthToken');
 router.route('/')
     .post(AuthToken.authToken,BrandController.addbrand);
 
-router.get("getAllBrands",getAllBrands);
+router.get("/getAllBrands",getAllBrands);
 module.exports=router;
