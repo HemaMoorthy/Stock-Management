@@ -7,6 +7,7 @@ const {getAllStocks} = require("../Controllers/StockController")
 const AuthToken = require('../MiddleWares/AuthToken');
 router.route('/')
     .post(AuthToken.authToken,StockController.addstock)
+    
 router.get("/getAllStocks", getAllStocks);
-
+// .get(AuthToken.authToken,StockController.getAllStocks)
 module.exports=router;

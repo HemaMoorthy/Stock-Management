@@ -27,10 +27,11 @@ module.exports.getAllStocks=async(req, res)=>{
                     status:'Error',
                     message:'No stocks',
                     err:error.message
-                })
+                }) 
             } else {
                 res.status(200).json({
                     status:'Success',
+                    stocks:stk,
                     message:'Get all stocks'
                 })
             }
