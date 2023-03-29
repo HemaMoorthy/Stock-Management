@@ -15,3 +15,31 @@ exports.addcategory = async(req,res)=>{
         })
     }
 }
+
+
+module.exports.getAllCategory = async(req, res)=>{
+    try {
+        brand.find().then((cate) => {
+            if(!cate){
+                res.status(404).json({
+                    status:'Error',
+                    message:'No stocks',
+                    err:error.message
+                }) 
+            } else {
+                res.status(200).json({
+                    status:'Success',
+                    category:cate,
+                    message:'Get all brands'
+                })
+            }
+        })
+        
+    } catch (error) {
+        res.status(500).json({
+            status:'Error',
+            message:'Something Went Wrong',
+            err:error.message
+        })
+    }
+}
